@@ -1,4 +1,4 @@
-package br.com.agenda;
+package br.com.agenda.ui.activity;
 
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
@@ -9,6 +9,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
+import br.com.agenda.R;
 
 public class MainActivity extends AppCompatActivity {
     @Override

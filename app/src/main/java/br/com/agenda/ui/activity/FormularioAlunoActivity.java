@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+import br.com.agenda.R;
+
 public class FormularioAlunoActivity extends AppCompatActivity {
 
     @Override
