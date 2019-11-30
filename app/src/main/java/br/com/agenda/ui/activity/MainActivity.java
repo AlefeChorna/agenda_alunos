@@ -35,9 +35,6 @@ public class MainActivity extends AppCompatActivity {
 
         criarFABNovoAluno();
         configurarLista();
-
-        alunoDAO.salvar(new Aluno("Alefe Chorna", "123456", "alefechorna@gmail.com"));
-        alunoDAO.salvar(new Aluno("Juca Bala", "456789", "jucabala@gmail.com"));
     }
 
     @Override
@@ -78,6 +75,8 @@ public class MainActivity extends AppCompatActivity {
         }
 
         startActivity(intent);
+
+        overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
     }
 
     @Override

@@ -89,9 +89,10 @@ public class FormularioAlunoActivity extends AppCompatActivity {
         }
 
         finish();
+        overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
     }
 
-    private Aluno preencherAluno() {
+    private void preencherAluno() {
         String nome = textNome.getText().toString();
         String telefone = textTelefone.getText().toString();
         String email = textEmail.getText().toString();
@@ -99,7 +100,12 @@ public class FormularioAlunoActivity extends AppCompatActivity {
         aluno.setNome(nome);
         aluno.setTelefone(telefone);
         aluno.setEmail(email);
+    }
 
-        return aluno;
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+
+        overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
     }
 }
