@@ -15,8 +15,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-import java.util.List;
-
 import br.com.agenda.R;
 import br.com.agenda.dao.AlunoDAO;
 import br.com.agenda.model.Aluno;
