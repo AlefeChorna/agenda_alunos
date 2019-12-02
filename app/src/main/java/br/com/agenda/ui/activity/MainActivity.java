@@ -6,7 +6,6 @@ import android.view.ContextMenu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import androidx.annotation.NonNull;
@@ -18,6 +17,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import br.com.agenda.R;
 import br.com.agenda.dao.AlunoDAO;
 import br.com.agenda.model.Aluno;
+import br.com.agenda.ui.adapter.MainActivityAdapter;
 
 import static br.com.agenda.ui.activity.ConstantesActivities.ALUNO_EDITAR;
 
@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
     private AlunoDAO alunoDAO;
 
-    private ArrayAdapter<Aluno> alunoAdapter;
+    private MainActivityAdapter alunoAdapter;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -117,7 +117,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void configurarAdapter(ListView listaAlunos) {
-        alunoAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1);
+        alunoAdapter = new MainActivityAdapter(this);
 
         listaAlunos.setAdapter(alunoAdapter);
     }
