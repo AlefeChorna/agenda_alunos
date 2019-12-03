@@ -15,7 +15,8 @@
             android:layout_margin="8dp"
             android:hint="@string/edit_text_nome"
             android:inputType="textCapWords"
-            android:lines="1" />
+            android:lines="1"
+            android:importantForAutofill="no" />
 
         <EditText
             android:id="@+id/activity_formulario_aluno_telefone"
@@ -24,7 +25,8 @@
             android:layout_margin="8dp"
             android:hint="@string/edit_text_telefone"
             android:inputType="phone"
-            android:lines="1" />
+            android:lines="1"
+            android:importantForAutofill="no" />
 
         <EditText
             android:id="@+id/activity_formulario_aluno_email"
@@ -33,7 +35,8 @@
             android:layout_margin="8dp"
             android:hint="@string/edit_text_email"
             android:inputType="textEmailAddress"
-            android:lines="1" />
+            android:lines="1"
+            android:importantForAutofill="no" />
     </LinearLayout>
 
 </ScrollView>

@@ -1,10 +1,8 @@
 <resources>
-    <string name="app_name">agenda</string>
     <string name="app_title">Lista de alunos</string>
     <string name="remover_item">Remover</string>
     <string name="edit_text_nome">Nome</string>
     <string name="edit_text_telefone">Telefone</string>
     <string name="edit_text_email">Email</string>
-    <string name="button_text_salvar">Salvar</string>
     <string name="title_header_menu_salvar">Salvar</string>
 </resources>

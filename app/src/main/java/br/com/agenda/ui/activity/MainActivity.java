@@ -1,5 +1,7 @@
 package br.com.agenda.ui.activity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.ContextMenu;
@@ -49,12 +51,30 @@ public class MainActivity extends AppCompatActivity {
         int itemId = item.getItemId();
 
         if (itemId == R.id.activity_main_item_remover) {
-            AdapterView.AdapterContextMenuInfo menuInfo = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
-            Aluno alunoSelecionado = alunoAdapter.getItem(menuInfo.position);
-            removerAluno(alunoSelecionado);
+            confirmarExclusao(item);
         }
 
         return super.onContextItemSelected(item);
+    }
+
+    private void confirmarExclusao(@NonNull final MenuItem item) {
+        AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
+        alertDialog.setTitle("Remover aluno");
+        alertDialog.setMessage("Tem certeza que deseja remover este aluno?");
+        alertDialog.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                removerAluno(item);
+            }
+        });
+        alertDialog.setNegativeButton("Não", null);
+        alertDialog.show();
+    }
+
+    private void removerAluno(@NonNull MenuItem item) {
+        AdapterView.AdapterContextMenuInfo menuInfo = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
+        Aluno alunoSelecionado = alunoAdapter.getItem(menuInfo.position);
+        removerAluno(alunoSelecionado);
     }
 
     private void criarFABNovoAluno() {
@@ -87,8 +107,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void atualizarAlunos() {
-        alunoAdapter.clear();
-        alunoAdapter.addAll(alunoDAO.todos());
+        alunoAdapter.atualizar(alunoDAO.todos());
     }
 
     private void configurarLista() {
