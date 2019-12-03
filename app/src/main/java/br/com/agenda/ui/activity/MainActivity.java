@@ -64,14 +64,14 @@ public class MainActivity extends AppCompatActivity {
         alertDialog.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                removerAluno(item);
+                removerAlunoSelecionado(item);
             }
         });
         alertDialog.setNegativeButton("Não", null);
         alertDialog.show();
     }
 
-    private void removerAluno(@NonNull MenuItem item) {
+    private void removerAlunoSelecionado(@NonNull MenuItem item) {
         AdapterView.AdapterContextMenuInfo menuInfo = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
         Aluno alunoSelecionado = alunoAdapter.getItem(menuInfo.position);
         removerAluno(alunoSelecionado);
